@@ -30,7 +30,17 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+
+LOCAL_APPS = [
+
+]
+
+THIRD_PARTY_APPS = [
+    
+]
 DEFAULT_APPS = [
+    'account.apps.AccountConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,15 +48,6 @@ DEFAULT_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
-
-LOCAL_APPS = [
-'account.apps.AccountConfig',
-]
-
-THIRD_PARTY_APPS = [
-    
-]
-
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 
@@ -135,3 +136,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
